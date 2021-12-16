@@ -51,4 +51,4 @@ jobs:
       
       - name: Test oA
         run: |
-          pytest tests/test_meteo_input.py::test_formats
+          pytest -s tests/test_meteo_input.py::test_formats
