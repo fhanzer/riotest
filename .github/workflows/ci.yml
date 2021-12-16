@@ -47,7 +47,7 @@ jobs:
       
       - name: Test Rasterio
         run: |
-          python -c "import rasterio; print(rasterio.crs.CRS.from_string('epsg:32632'))"
+          python -c "import openamundsen; import rasterio; print(rasterio.crs.CRS.from_string('epsg:32632'))"
       
       - name: Test oA
         run: |
