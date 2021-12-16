@@ -43,8 +43,12 @@ jobs:
                 
       - name: Install oA
         run: |
-          pip install openamundsen
+          python -m pip install '.[test]'
       
       - name: Test Rasterio
         run: |
           python -c "import rasterio; print(rasterio.crs.CRS.from_epsg(32632))"
+      
+      - name: Test oA
+        run: |
+          pytest tests/test_meteo_input.py::test_formats
