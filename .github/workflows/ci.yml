@@ -40,6 +40,10 @@ jobs:
       - name: Install Rasterio
         run: |
           conda install -y --channel=conda-forge rasterio
+                
+      - name: Install oA
+        run: |
+          pip install openamundsen
       
       - name: Test Rasterio
         run: |
