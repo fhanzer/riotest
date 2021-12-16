@@ -43,4 +43,4 @@ jobs:
       
       - name: Test Rasterio
         run: |
-          rio --version
+          python -c "import rasterio; print(rasterio.crs.CRS.from_epsg(32632))"
