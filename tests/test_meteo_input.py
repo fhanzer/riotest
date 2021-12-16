@@ -65,6 +65,7 @@ def test_formats():
         config.input_data.meteo.format = fmt
         config.input_data.meteo.dir = f'{pytest.DATA_DIR}/meteo/rofental/{fmt}'
         model = oa.OpenAmundsen(config)
+        print('CRS: ', model.config.crs)
         model.initialize()
         ds = model.meteo.sortby('station')
         assert ds.time.to_index().equals(model.dates)
