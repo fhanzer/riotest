@@ -43,7 +43,7 @@ jobs:
                 
       - name: Install oA
         run: |
-          python -m pip install '.[test]'
+          python -m pip install 'openamundsen[test]'
       
       - name: Test Rasterio
         run: |
