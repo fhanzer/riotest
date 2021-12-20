@@ -45,11 +45,23 @@ jobs:
       - name: Install oA
         run: |
           python -m pip install 'openamundsen[test]'
+          
+      - name: Print PROJ_LIB
+        run: |
+          echo $PROJ_LIB
+          python -c "import rasterio; import os; print(os.environ['PROJ_LIB'])"
+          python -c "import openamundsen as oa; import rasterio; import os; print(os.environ['PROJ_LIB'])"
+
+          
+      - name: Test Rasterio without oA
+        run: |
+          python -c "import rasterio; print(rasterio.crs.CRS.from_string('epsg:32632'))"
+
       
-      - name: Test Rasterio
+      - name: Test Rasterio with oA
         run: |
           python -c "import openamundsen; import rasterio; print(rasterio.crs.CRS.from_string('epsg:32632'))"
       
-      - name: Test oA
-        run: |
-          pytest -s tests/test_meteo_input.py::test_formats
+      #- name: Test oA
+      #  run: |
+      #    pytest -s tests/test_meteo_input.py::test_formats
