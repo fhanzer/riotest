@@ -40,11 +40,7 @@ jobs:
       
       - name: Install Rasterio
         run: |
-          conda install -y --channel=conda-forge rasterio=1.1.8
-          
-      - name: Remove numpy
-        run: |
-          conda remove -y --force numpy
+          conda install -y --channel=conda-forge rasterio=1.1.8 numpy scipy h5py
                 
       - name: Install oA
         run: |
