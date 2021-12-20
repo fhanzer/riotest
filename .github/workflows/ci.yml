@@ -46,11 +46,11 @@ jobs:
         run: |
           python -m pip install 'openamundsen[test]'
           
-      - name: Print PROJ_LIB
+      - name: Print datadir
         run: |
           echo $PROJ_LIB
-          python -c "import rasterio; import os; print(os.environ.get('PROJ_LIB'))"
-          python -c "import openamundsen as oa; import rasterio; import os; print(os.environ.get('PROJ_LIB'))"
+          python -c "import pyproj; print(pyproj.datadir.get_data_dir())"
+          python -c "import openamundsen as oa; import rasterio; import pyproj; print(pyproj.datadir.get_data_dir())"
 
           
       - name: Test Rasterio without oA
