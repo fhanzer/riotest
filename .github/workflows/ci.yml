@@ -49,8 +49,8 @@ jobs:
       - name: Print PROJ_LIB
         run: |
           echo $PROJ_LIB
-          python -c "import rasterio; import os; print(os.environ['PROJ_LIB'])"
-          python -c "import openamundsen as oa; import rasterio; import os; print(os.environ['PROJ_LIB'])"
+          python -c "import rasterio; import os; print(os.environ.get('PROJ_LIB'))"
+          python -c "import openamundsen as oa; import rasterio; import os; print(os.environ.get('PROJ_LIB'))"
 
           
       - name: Test Rasterio without oA
