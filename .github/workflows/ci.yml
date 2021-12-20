@@ -62,6 +62,6 @@ jobs:
         run: |
           python -c "import openamundsen; import rasterio; print(rasterio.crs.CRS.from_string('epsg:32632'))"
       
-      #- name: Test oA
-      #  run: |
-      #    pytest -s tests/test_meteo_input.py::test_formats
+      - name: Test oA
+        run: |
+          pytest .
