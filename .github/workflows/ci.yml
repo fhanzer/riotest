@@ -19,7 +19,7 @@ jobs:
           - windows
           #- ubuntu
         python-version:
-          - 3.9
+          - 3.8
 
     steps:
       - name: Checkout
@@ -40,7 +40,7 @@ jobs:
       
       - name: Install Rasterio
         run: |
-          conda install -y --channel=conda-forge rasterio
+          conda install -y --channel=conda-forge rasterio=1.1.8
                 
       - name: Install oA
         run: |
